@@ -13,10 +13,16 @@
 		A2A910012863BDF90018DAC2 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A910002863BDF90018DAC2 /* Tests_macOSLaunchTests.swift */; };
 		A2A910022863BDF90018DAC2 /* splitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FDA2863BDF70018DAC2 /* splitsApp.swift */; };
 		A2A910032863BDF90018DAC2 /* splitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FDA2863BDF70018DAC2 /* splitsApp.swift */; };
-		A2A910042863BDF90018DAC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FDB2863BDF70018DAC2 /* ContentView.swift */; };
-		A2A910052863BDF90018DAC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FDB2863BDF70018DAC2 /* ContentView.swift */; };
+		A2A910042863BDF90018DAC2 /* SplitsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FDB2863BDF70018DAC2 /* SplitsSettingsView.swift */; };
+		A2A910052863BDF90018DAC2 /* SplitsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FDB2863BDF70018DAC2 /* SplitsSettingsView.swift */; };
 		A2A910062863BDF90018DAC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A90FDC2863BDF90018DAC2 /* Assets.xcassets */; };
 		A2A910072863BDF90018DAC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2A90FDC2863BDF90018DAC2 /* Assets.xcassets */; };
+		A2A910172863C4D70018DAC2 /* SplitsSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A910162863C4D70018DAC2 /* SplitsSliderView.swift */; };
+		A2A910182863C4D70018DAC2 /* SplitsSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A910162863C4D70018DAC2 /* SplitsSliderView.swift */; };
+		A2A9101A2863C4EF0018DAC2 /* SplitsKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A910192863C4EF0018DAC2 /* SplitsKeyboardView.swift */; };
+		A2A9101B2863C4EF0018DAC2 /* SplitsKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A910192863C4EF0018DAC2 /* SplitsKeyboardView.swift */; };
+		A2A9101D2863CD180018DAC2 /* SplitsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A9101C2863CD180018DAC2 /* SplitsDataModel.swift */; };
+		A2A9101E2863CD180018DAC2 /* SplitsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A9101C2863CD180018DAC2 /* SplitsDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,7 @@
 
 /* Begin PBXFileReference section */
 		A2A90FDA2863BDF70018DAC2 /* splitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitsApp.swift; sourceTree = "<group>"; };
-		A2A90FDB2863BDF70018DAC2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2A90FDB2863BDF70018DAC2 /* SplitsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsSettingsView.swift; sourceTree = "<group>"; };
 		A2A90FDC2863BDF90018DAC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2A90FE12863BDF90018DAC2 /* splits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A90FE72863BDF90018DAC2 /* splits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = splits.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +55,9 @@
 		A2A90FFA2863BDF90018DAC2 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A90FFE2863BDF90018DAC2 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A2A910002863BDF90018DAC2 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		A2A910162863C4D70018DAC2 /* SplitsSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsSliderView.swift; sourceTree = "<group>"; };
+		A2A910192863C4EF0018DAC2 /* SplitsKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsKeyboardView.swift; sourceTree = "<group>"; };
+		A2A9101C2863CD180018DAC2 /* SplitsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				A2A90FDA2863BDF70018DAC2 /* splitsApp.swift */,
-				A2A90FDB2863BDF70018DAC2 /* ContentView.swift */,
+				A2A90FDB2863BDF70018DAC2 /* SplitsSettingsView.swift */,
 				A2A90FDC2863BDF90018DAC2 /* Assets.xcassets */,
+				A2A910162863C4D70018DAC2 /* SplitsSliderView.swift */,
+				A2A910192863C4EF0018DAC2 /* SplitsKeyboardView.swift */,
+				A2A9101C2863CD180018DAC2 /* SplitsDataModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -299,7 +311,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2A910042863BDF90018DAC2 /* ContentView.swift in Sources */,
+				A2A910172863C4D70018DAC2 /* SplitsSliderView.swift in Sources */,
+				A2A9101D2863CD180018DAC2 /* SplitsDataModel.swift in Sources */,
+				A2A910042863BDF90018DAC2 /* SplitsSettingsView.swift in Sources */,
+				A2A9101A2863C4EF0018DAC2 /* SplitsKeyboardView.swift in Sources */,
 				A2A910022863BDF90018DAC2 /* splitsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +323,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2A910052863BDF90018DAC2 /* ContentView.swift in Sources */,
+				A2A910182863C4D70018DAC2 /* SplitsSliderView.swift in Sources */,
+				A2A9101E2863CD180018DAC2 /* SplitsDataModel.swift in Sources */,
+				A2A910052863BDF90018DAC2 /* SplitsSettingsView.swift in Sources */,
+				A2A9101B2863C4EF0018DAC2 /* SplitsKeyboardView.swift in Sources */,
 				A2A910032863BDF90018DAC2 /* splitsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
