@@ -21,7 +21,15 @@ struct SplitsSliderView: View {
                     VStack {
                         Spacer()
                         HStack {
-                            Text("\(recipient.wrappedValue.name)").fixedSize()
+                            VStack(alignment: .leading) {
+                                Text("\(recipient.wrappedValue.name)").fixedSize()
+                                Spacer()
+                                if splitsSettings.isSelfIncluded && recipient.wrappedValue.name == "Your portion" {
+                                    Text("Won't be requested").fixedSize()
+                                } else {
+                                    Text("$\(recipient.wrappedValue.name)").fixedSize()
+                                }
+                            }
                             Spacer()
                             Button(String(format: "$%.2f", Float(recipient.amount.wrappedValue)/100.0)) {
                                 showingSheet.toggle()
@@ -29,8 +37,7 @@ struct SplitsSliderView: View {
                             .sheet(isPresented: $showingSheet) {
                                 SplitsKeyboardView(splitRecipient: recipient.wrappedValue)
                             }
-                            .buttonStyle(.plain)
-
+                            .buttonStyle(CapsuleButton())
                         }
                         HStack {
                             Spacer()
@@ -65,6 +72,15 @@ struct SplitsSliderView: View {
                 }
             }
         }
+    }
+}
+
+struct CapsuleButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(8)
+            .background(Color(UIColor.systemGray5))
+            .clipShape(Capsule())
     }
 }
 
