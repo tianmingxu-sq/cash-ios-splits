@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38A7661C286CC87400711ED3 /* SplitsSliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7661B286CC87400711ED3 /* SplitsSliderRow.swift */; };
+		38A7661D286CC87400711ED3 /* SplitsSliderRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A7661B286CC87400711ED3 /* SplitsSliderRow.swift */; };
 		A2A90FF32863BDF90018DAC2 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FF22863BDF90018DAC2 /* Tests_iOS.swift */; };
 		A2A90FF52863BDF90018DAC2 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FF42863BDF90018DAC2 /* Tests_iOSLaunchTests.swift */; };
 		A2A90FFF2863BDF90018DAC2 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A90FFE2863BDF90018DAC2 /* Tests_macOS.swift */; };
@@ -43,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38A7661B286CC87400711ED3 /* SplitsSliderRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsSliderRow.swift; sourceTree = "<group>"; };
 		A2A90FDA2863BDF70018DAC2 /* splitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = splitsApp.swift; sourceTree = "<group>"; };
 		A2A90FDB2863BDF70018DAC2 /* SplitsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitsSettingsView.swift; sourceTree = "<group>"; };
 		A2A90FDC2863BDF90018DAC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +115,7 @@
 				A2A910162863C4D70018DAC2 /* SplitsSliderView.swift */,
 				A2A910192863C4EF0018DAC2 /* SplitsKeyboardView.swift */,
 				A2A9101C2863CD180018DAC2 /* SplitsDataModel.swift */,
+				38A7661B286CC87400711ED3 /* SplitsSliderRow.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -315,6 +319,7 @@
 				A2A9101D2863CD180018DAC2 /* SplitsDataModel.swift in Sources */,
 				A2A910042863BDF90018DAC2 /* SplitsSettingsView.swift in Sources */,
 				A2A9101A2863C4EF0018DAC2 /* SplitsKeyboardView.swift in Sources */,
+				38A7661C286CC87400711ED3 /* SplitsSliderRow.swift in Sources */,
 				A2A910022863BDF90018DAC2 /* splitsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,6 +332,7 @@
 				A2A9101E2863CD180018DAC2 /* SplitsDataModel.swift in Sources */,
 				A2A910052863BDF90018DAC2 /* SplitsSettingsView.swift in Sources */,
 				A2A9101B2863C4EF0018DAC2 /* SplitsKeyboardView.swift in Sources */,
+				38A7661D286CC87400711ED3 /* SplitsSliderRow.swift in Sources */,
 				A2A910032863BDF90018DAC2 /* splitsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
