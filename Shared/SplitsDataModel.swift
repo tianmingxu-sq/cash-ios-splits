@@ -30,6 +30,7 @@ class SplitsSettings: ObservableObject {
         }
     }
     @Published var recipients: [SplitsRecipient] = []
+    var newRecipients: [SplitsRecipient] = []
     let minAmount = 100
 
     func reset() {
@@ -84,7 +85,7 @@ class SplitsSettings: ObservableObject {
 
         let remain = diff - splittedAmount * recipientsCount
         var hasCountRemain = remain == 0
-        recipients = recipients.map{ re in
+        newRecipients = recipients.map{ re in
             if re.id == recipient.id {
                 return recipient
             }
@@ -116,11 +117,11 @@ class SplitsRecipient: ObservableObject, Identifiable {
             shouldUpdate = self.parent?.update(self, amount: newValue, previousAmount: amount) ?? false
         }
         didSet {
-            if !shouldUpdate && !isUpdating {
+            if let newRecipients = self.parent?.newRecipients, shouldUpdate {
+                self.parent?.recipients = newRecipients
+            } else if !isUpdating && amount != oldValue {
                 isUpdating = true
-                // If shouldn't update, set it back to old value and update flag
                 amount = oldValue
-            } else {
                 isUpdating = false
             }
         }
