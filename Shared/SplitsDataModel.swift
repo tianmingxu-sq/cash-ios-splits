@@ -83,18 +83,22 @@ class SplitsSettings: ObservableObject {
         )
         guard overLimitRecipientsCount == 0 else { return false }
 
-        let remain = diff - splittedAmount * recipientsCount
-        var hasCountRemain = remain == 0
+        var remain = diff - splittedAmount * recipientsCount
         newRecipients = recipients.map{ re in
             if re.id == recipient.id {
                 return recipient
             }
             if re.isLocked { return re }
-            if hasCountRemain {
-                return SplitsRecipient(name: re.name, amount: re.amount-splittedAmount, self, isLocked: re.isLocked)
+            if remain != 0 {
+                if remain != 0 {
+                    remain-=1
+                    return SplitsRecipient(name: re.name, amount: re.amount-splittedAmount-1, self, isLocked: re.isLocked)
+                } else {
+                    remain+=1
+                    return SplitsRecipient(name: re.name, amount: re.amount-splittedAmount+1, self, isLocked: re.isLocked)
+                }
             } else {
-                hasCountRemain = true
-                return SplitsRecipient(name: re.name, amount: re.amount-splittedAmount-remain, self, isLocked: re.isLocked)
+                return SplitsRecipient(name: re.name, amount: re.amount-splittedAmount, self, isLocked: re.isLocked)
             }
         }
         return true
@@ -112,6 +116,7 @@ class SplitsRecipient: ObservableObject, Identifiable {
     let name: String
     let id = UUID()
     weak var parent: SplitsSettings?
+    var previousAmount: Int? = nil
     @Published var amount: Int {
         willSet {
             shouldUpdate = self.parent?.update(self, amount: newValue, previousAmount: amount) ?? false
@@ -119,16 +124,20 @@ class SplitsRecipient: ObservableObject, Identifiable {
         didSet {
             if let newRecipients = self.parent?.newRecipients, shouldUpdate {
                 self.parent?.recipients = newRecipients
-            } else if !isUpdating && amount != oldValue {
-                isUpdating = true
-                amount = oldValue
-                isUpdating = false
+            }
+            if previousAmount == nil {
+                previousAmount = amount
             }
         }
     }
-    @Published var isLocked: Bool = false
-    @Published var shouldUpdate: Bool = true
-    var isUpdating = false
+    @Published var isLocked: Bool = false {
+        didSet {
+            if !isLocked && isLocked != oldValue {
+                // resplit unlocked recipients
+            }
+        }
+    }
+    var shouldUpdate: Bool = true
     init(name: String, amount: Int, _ parent:SplitsSettings? = nil, isLocked: Bool = false) {
         self.name = name
         self.amount = amount

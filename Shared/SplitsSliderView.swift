@@ -43,9 +43,18 @@ struct SplitsSliderView: View {
                             Spacer()
                             Slider(
                                 value: recipient.amount.float(),
-                                in: Float(splitsSettings.minAmount)...Float(splitsSettings.totalDollarAmount - splitsSettings.minAmount),
-                                step: Float(splitsSettings.sliderStep)
-                            )
+                                in: 0.0...Float(splitsSettings.totalDollarAmount),
+                                step: Float(splitsSettings.sliderStep)) { isChanging in
+                                    if !isChanging {
+                                        let currentSum = splitsSettings.recipients.reduce(0) { $0+$1.amount }
+                                        if let previousAmount = recipient.wrappedValue.previousAmount, currentSum > splitsSettings.totalDollarAmount || !recipient.wrappedValue.shouldUpdate{
+                                            recipient.wrappedValue.amount = previousAmount
+                                            recipient.wrappedValue.previousAmount = nil
+                                            return
+                                        }
+                                        recipient.isLocked.wrappedValue = true
+                                    }
+                                }
                             Button {
                                 recipient.isLocked.wrappedValue.toggle()
                             } label: {
