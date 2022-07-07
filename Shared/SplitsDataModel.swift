@@ -90,7 +90,7 @@ class SplitsSettings: ObservableObject {
             }
             if re.isLocked { return re }
             if remain != 0 {
-                if remain != 0 {
+                if remain > 0 {
                     remain-=1
                     return SplitsRecipient(name: re.name, amount: re.amount-splittedAmount-1, self, isLocked: re.isLocked)
                 } else {
